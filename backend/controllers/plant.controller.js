@@ -29,6 +29,6 @@ exports.update = async (req, res) => {
 };
 
 exports.delete = async (req, res) => {
-    const plant = await Plant.findByIdAndDelete(plant);
+    const plant = await Plant.findByIdAndDelete(req.params.id);
     return plant ? res.json({ message: "Deleted successfully" }) : res.status(404).json({ message: "Not found" });
 };

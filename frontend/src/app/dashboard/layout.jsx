@@ -1,0 +1,32 @@
+import Link from "next/link";
+import "../globals.css";
+
+export const metadata = {
+  title: "Green Leaf - Dashboard",
+  description: "Best plants ecommerce website",
+};
+
+export default function DashboardLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        <div className="flex flex-row">
+          <nav>
+            <div className="bg-[#475F45] h-screen w-56 pt-10 px-5 min-h-full">
+              <Link href="/"><h1 className="text-white font-bold text-3xl mb-5 hover:text-black hover:cursor-pointer">Green Leaf</h1></Link>
+              <ul>
+                <li className="text-white font-semibold text-lg hover:cursor-pointer hover:text-black hover:bg-[#698667] p-1">
+                  <Link href="/dashboard/plants">Plants</Link>
+                </li>
+                <li className="text-white font-semibold text-lg hover:cursor-pointer hover:text-black hover:bg-[#698667] p-1">
+                  <Link href="/dashboard/orders">Orders</Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <main className="w-full p-20">{children}</main>
+        </div>
+      </body>
+    </html>
+  );
+}

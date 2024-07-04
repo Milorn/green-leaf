@@ -1,6 +1,6 @@
 
 import Navbar from "@/components/Navbar";
-import "./globals.css";
+import "../globals.css";
 import { FiFacebook, FiInstagram, FiTwitter } from "react-icons/fi";
 import Footer from "@/components/Footer";
 
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
           <FiInstagram className="size-5 text-white" />
           <FiTwitter className="size-5 text-white" />
         </div>
-        <main className="w-3/4 mx-auto my-8 md:my-20">
+        <main className="max-w-6xl mx-auto my-8 md:my-20">
           {children}
         </main>
         <Footer />
