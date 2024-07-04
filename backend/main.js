@@ -15,6 +15,7 @@ dotenv.config();
 /* ----- Global Middlewares ----- */
 app.use(express.json());
 app.use(cors());
+app.use('/public', express.static('./public'));
 
 /* ----- Routes Imports ----- */
 const plantsRoutes = require('./routes/plants.routes');

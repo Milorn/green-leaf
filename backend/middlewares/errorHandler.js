@@ -1,5 +1,5 @@
 
 module.exports = (handler) => (req, res, next) => {
-    handler()
+    handler(req, res)
         .catch(err => next(err));
 }

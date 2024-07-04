@@ -7,7 +7,14 @@ exports.index = async (req, res) => {
 };
 
 exports.store = async (req, res) => {
-    const plant = await Plant.create(req.body);
+    const plant = await Plant.create({
+        name: req.body.name,
+        type: req.body.type,
+        age: req.body.age,
+        price: req.body.price,
+        description: req.body.description,
+        image: req.file.path
+    });
     return res.json(plant);
 };
 
