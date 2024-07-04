@@ -7,14 +7,15 @@ exports.index = async (req, res) => {
 };
 
 exports.store = async (req, res) => {
-    const plant = await Plant.create({
+    const data = {
         name: req.body.name,
         type: req.body.type,
         age: req.body.age,
         price: req.body.price,
         description: req.body.description,
         image: req.file.path
-    });
+    };
+    const plant = await Plant.create(data);
     return res.json(plant);
 };
 
@@ -24,7 +25,16 @@ exports.show = async (req, res) => {
 };
 
 exports.update = async (req, res) => {
-    const plant = await Plant.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const data = {
+        name: req.body.name,
+        type: req.body.type,
+        age: req.body.age,
+        price: req.body.price,
+        description: req.body.description,
+        image: req.file.path
+    };
+
+    const plant = await Plant.findByIdAndUpdate(req.params.id, data , { new: true });
     return plant ? res.json(plant) : res.status(404).json({ message: "Not found" });
 };
 

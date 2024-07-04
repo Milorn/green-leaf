@@ -25,8 +25,8 @@ export default function CreateProduct() {
             description,
             image
         };
-        await axios.postForm('http://localhost:8000/dashboard/plants', data);
-        router.push('/shop');
+        await axios.postForm('http://localhost:8000/plants', data);
+        router.push('/dashboard/plants');
     }
     return (
         <>

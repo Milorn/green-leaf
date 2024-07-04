@@ -22,7 +22,7 @@ export default function CreateProduct({params}) {
                 setPrice(data.price);
                 setDescription(data.description);
             });
-    }, );
+    }, []);
 
     const router = useRouter();
 
@@ -36,8 +36,8 @@ export default function CreateProduct({params}) {
             description,
             image
         };
-        await axios.postForm('http://localhost:8000/plants', data);
-        router.push('/shop');
+        await axios.putForm(`http://localhost:8000/plants/${params.id}`, data);
+        router.push('/dashboard/plants');
     }
     return (
         <>
