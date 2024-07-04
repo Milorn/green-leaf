@@ -1,3 +1,4 @@
+import AddToCart from "@/components/AddToCart";
 import axios from "axios"
 
 export default async function Shop() {
@@ -5,12 +6,19 @@ export default async function Shop() {
     const plants = resp.data;
     return (
         <>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-10">
                 {
                     plants.map(plant => (
-                        <div key={plant._id}>
-                            <img className="w-full h-auto" src={`http://localhost:8000/${plant.image}`} alt="" />
-                            <h1>{plant.name}</h1>
+                        <div className="group relative border border-[#475F45]" key={plant._id}>
+                            <img className=" w-full h-52 object-cover" src={`http://localhost:8000/${plant.image}`} alt="" />
+                            <div className="p-2">
+                                <div className="flex justify-between">
+                                    <h1 className="text-xl font-semibold">{plant.name}</h1>
+                                    <h3 className="text-md">{plant.price} <span className="text-sm">(DZD)</span></h3>
+                                </div>
+                                <h3 className="text-md">{plant.type}</h3>
+                                <AddToCart plant={plant}/>
+                            </div>
                         </div>  
                     ))
                 }

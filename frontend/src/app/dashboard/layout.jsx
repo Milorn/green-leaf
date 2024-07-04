@@ -16,10 +16,12 @@ export default function DashboardLayout({ children }) {
               <Link href="/"><h1 className="text-white font-bold text-3xl mb-5 hover:text-black hover:cursor-pointer">Green Leaf</h1></Link>
               <ul>
                 <li className="text-white font-semibold text-lg hover:cursor-pointer hover:text-black hover:bg-[#698667] p-1">
-                  <Link href="/dashboard/plants">Plants</Link>
+                  <Link className="inline-block w-full" href="/dashboard/plants">Plants</Link>
                 </li>
                 <li className="text-white font-semibold text-lg hover:cursor-pointer hover:text-black hover:bg-[#698667] p-1">
-                  <Link href="/dashboard/orders">Orders</Link>
+                  <Link className="inline-block w-full"  href="/dashboard/orders">Orders</Link>
+                </li>
+                <li className="bg-red-500">
                 </li>
               </ul>
             </div>
