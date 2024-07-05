@@ -1,5 +1,4 @@
 const Plant = require('../models/Plant');
-const Joi = require('joi');
 
 exports.index = async (req, res) => {
     const plants = await Plant.find();

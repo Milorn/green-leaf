@@ -19,9 +19,11 @@ app.use('/public', express.static('./public'));
 
 /* ----- Routes Imports ----- */
 const plantsRoutes = require('./routes/plants.routes');
+const ordersRoutes = require('./routes/orders.routes');
 
 /* ----- Routes User ----- */
 app.use(plantsRoutes);
+app.use(ordersRoutes);
 
 /* ----- Error Middlewares ----- */
 app.use(notFoundMiddleware);

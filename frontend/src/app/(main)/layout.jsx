@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
             <FiInstagram className="size-5 text-white" />
             <FiTwitter className="size-5 text-white" />
           </div>
-          <main className="max-w-6xl mx-auto my-8 md:my-20 flex-grow">
+          <main className="max-w-6xl mx-auto w-full my-8 md:my-20 flex-grow">
             {children}
           </main>
           <Footer />

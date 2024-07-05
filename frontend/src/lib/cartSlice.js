@@ -18,10 +18,29 @@ export const cartSlice = createSlice({
                     quantity: 1
                 });
             }
+        },
+        addQuantity(state, {payload}) {
+            const index = state.items.findIndex(item => item.plant._id == payload);
+            const item = state.items[index];
+            item.quantity ++;
+        },
+        minusQuantity(state, {payload}) {
+            const index = state.items.findIndex(item => item.plant._id == payload);
+            const item = state.items[index];
+
+            if(item.quantity < 2) {
+                state.items.splice(index, 1);
+            }
+            else {
+                item.quantity --;
+            }
+        },
+        clearItems(state) {
+            state.items = [];
         }
     }
 });
 
-export const { addItem } = cartSlice.actions;
+export const { addItem, addQuantity, minusQuantity, clearItems } = cartSlice.actions;
 
 export default cartSlice.reducer;
