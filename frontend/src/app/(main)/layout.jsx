@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen">
+      <body>
         <StoreProvider>
           <Navbar />
           <div className="hidden fixed top-0 right-0 min-h-screen w-[80px] bg-[#475F45] md:flex flex-col justify-center items-center gap-20">
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
             <FiInstagram className="size-5 text-white" />
             <FiTwitter className="size-5 text-white" />
           </div>
-          <main className="max-w-6xl mx-auto w-full my-8 md:my-20 flex-grow">
+          <main className="max-w-6xl mx-auto my-8 md:my-20 flex-grow">
             {children}
           </main>
           <Footer />

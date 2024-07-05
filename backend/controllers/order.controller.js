@@ -11,7 +11,7 @@ exports.store = async (req, res) => {
 };
 
 exports.show = async (req, res) => {
-    const order = await Order.findById(req.params.id);
+    const order = await Order.findById(req.params.id).populate('items.plant');
     return order ? res.json(order) : res.status(404).json({ message: "Not found" });
 };
 

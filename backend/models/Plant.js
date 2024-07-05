@@ -1,10 +1,11 @@
-const {model} = require('mongoose');
+const mongoose = require('mongoose');
 
-module.exports = model('Plant', {
+
+module.exports = mongoose.model('Plant', mongoose.Schema({
     name: String,
     type: String,
     age: Number,
     price: Number, 
     description: String,
     image: String
-});
+}));

@@ -28,7 +28,7 @@ export default function Cart() {
       phone,
       items: items.map(item => {
         return {
-          id: item.plant._id,
+          plant: item.plant._id,
           quantity: item.quantity
         }
       })
@@ -40,7 +40,7 @@ export default function Cart() {
 
   return (
     <>
-      <div className="flex justify-evenly items-center gap-20">
+      <div className="flex justify-evenly items-center gap-20 min-h-[60vh]">
         <div className="flex flex-col gap-4 justify-center items-center">
           <h1 className="text-4xl font-bold">My Cart</h1>
           <ul>

@@ -5,7 +5,7 @@ export default async function Shop() {
     const resp = await axios.get('http://localhost:8000/plants');
     const plants = resp.data;
     return (
-        <>
+        <div className="min-h-[50vh]">
             <div className="grid grid-cols-3 gap-10">
                 {
                     plants.map(plant => (
@@ -23,6 +23,6 @@ export default async function Shop() {
                     ))
                 }
             </div>
-        </>
+        </div>
     )
 }
