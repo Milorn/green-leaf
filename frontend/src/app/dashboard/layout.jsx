@@ -1,14 +1,18 @@
+"use client";
 
 import Link from "next/link";
 import "../globals.css";
 import LogoutButton from "@/components/LogoutButton";
+import { useRouter } from "next/navigation";
 
-export const metadata = {
-  title: "Green Leaf - Dashboard",
-  description: "Best plants ecommerce website",
-};
 
 export default function DashboardLayout({ children }) {
+  const token = localStorage.getItem('token');
+  const router = useRouter();
+  if(!token) {
+    return router.push('/login');
+  }
+
   return (
     <html lang="en">
       <body>
