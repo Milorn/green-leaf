@@ -3,7 +3,7 @@
 import { EyeIcon, TrashIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import axios from "../../../lib/axios";
+import axios from "@/lib/axios";
 
 export default function Orders() {
 

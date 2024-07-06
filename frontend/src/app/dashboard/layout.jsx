@@ -11,12 +11,12 @@ export default function DashboardLayout({ children }) {
   
   const router = useRouter();
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   if(!token) {
-  //     return router.push('/login');
-  //   }
-  // })
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if(!token) {
+      return router.push('/login');
+    }
+  })
   
 
   return (
