@@ -4,14 +4,20 @@ import Link from "next/link";
 import "../globals.css";
 import LogoutButton from "@/components/LogoutButton";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 
 export default function DashboardLayout({ children }) {
-  const token = localStorage.getItem('token');
+  
   const router = useRouter();
-  if(!token) {
-    return router.push('/login');
-  }
+
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   if(!token) {
+  //     return router.push('/login');
+  //   }
+  // })
+  
 
   return (
     <html lang="en">
