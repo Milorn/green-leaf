@@ -1,5 +1,7 @@
+
 import Link from "next/link";
 import "../globals.css";
+import LogoutButton from "@/components/LogoutButton";
 
 export const metadata = {
   title: "Green Leaf - Dashboard",
@@ -21,7 +23,8 @@ export default function DashboardLayout({ children }) {
                 <li className="text-white font-semibold text-lg hover:cursor-pointer hover:text-black hover:bg-[#698667] p-1">
                   <Link className="inline-block w-full"  href="/dashboard/orders">Orders</Link>
                 </li>
-                <li className="bg-red-500">
+                <li className="text-white font-semibold text-lg hover:cursor-pointer hover:text-black hover:bg-[#698667] p-1">
+                  <LogoutButton/>
                 </li>
               </ul>
             </div>

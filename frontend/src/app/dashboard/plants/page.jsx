@@ -1,7 +1,7 @@
 "use client";
 
 import { EyeIcon, TrashIcon } from "@heroicons/react/24/outline";
-import axios from "axios";
+import axios from "../../../lib/axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 

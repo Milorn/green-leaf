@@ -1,21 +1,21 @@
 "use client";
 
 import { EyeIcon, TrashIcon } from "@heroicons/react/24/outline";
-import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import axios from "../../../lib/axios";
 
 export default function Orders() {
 
   const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/orders")
+        axios.get("/orders")
             .then(({data}) => setOrders(data));
     }, []);
 
     const deleteOrder = async (id) => {
-        await axios.delete(`http://localhost:8000/orders/${id}`);
+        await axios.delete(`/orders/${id}`);
         const newOrders = [...orders];
         setOrders(newOrders.filter(order => order._id != id));
     };

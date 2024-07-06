@@ -20,10 +20,12 @@ app.use('/public', express.static('./public'));
 /* ----- Routes Imports ----- */
 const plantsRoutes = require('./routes/plants.routes');
 const ordersRoutes = require('./routes/orders.routes');
+const authRoutes = require('./routes/auth.routes');
 
 /* ----- Routes User ----- */
 app.use(plantsRoutes);
 app.use(ordersRoutes);
+app.use(authRoutes);
 
 /* ----- Error Middlewares ----- */
 app.use(notFoundMiddleware);
