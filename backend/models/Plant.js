@@ -7,5 +7,6 @@ module.exports = mongoose.model('Plant', mongoose.Schema({
     age: Number,
     price: Number, 
     description: String,
-    image: String
+    image: String,
+    comments: Array
 }));

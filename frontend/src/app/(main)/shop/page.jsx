@@ -1,5 +1,6 @@
 import AddToCart from "@/components/AddToCart";
 import axios from "axios"
+import Link from "next/link";
 
 export default async function Shop() {
     const resp = await axios.get('http://localhost:8000/plants');
@@ -13,7 +14,7 @@ export default async function Shop() {
                             <img className=" w-full h-52 object-cover" src={`http://localhost:8000/${plant.image}`} alt="" />
                             <div className="p-2">
                                 <div className="flex justify-between">
-                                    <h1 className="text-xl font-semibold">{plant.name}</h1>
+                                    <Link href={`/shop/${plant._id}`}><h1 className="text-xl font-semibold">{plant.name}</h1></Link>
                                     <h3 className="text-md">{plant.price} <span className="text-sm">(DZD)</span></h3>
                                 </div>
                                 <h3 className="text-md">{plant.type}</h3>

@@ -16,5 +16,6 @@ router.post('/plants', authMiddleware, upload.single('image'), validator(plantsV
 router.get('/plants/:id', objectIdMiddleware, errorHandler(plantsController.show));
 router.put('/plants/:id', authMiddleware,  objectIdMiddleware, upload.single('image'), validator(plantsValidation.store), errorHandler(plantsController.update));
 router.delete('/plants/:id', authMiddleware, objectIdMiddleware, errorHandler(plantsController.delete));
+router.post('/plants/:id/comment', errorHandler(plantsController.comment));
 
 module.exports = router;

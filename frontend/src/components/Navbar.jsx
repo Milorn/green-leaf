@@ -22,7 +22,6 @@ export default function Navbar() {
                     <ul className={`${showMenu ? 'block' : 'hidden'} md:block shadow-sm md:shadow-none`}>
                         <li className="block md:inline-block mx-3 text-md text-[#6F836E] font-medium"><Link href="/">Home</Link></li>
                         <li className="block md:inline-block mx-3 text-md text-[#9FA39F] font-medium"><Link href="/shop">Plants</Link></li>
-                        <li className="block md:inline-block mx-3 text-md text-[#9FA39F] font-medium"><Link href="/dashboard">Dashboard</Link></li>
                         <li className="block md:inline-block mx-3 text-md text-[#9FA39F] font-medium">Checkout</li>
                     </ul>
 
